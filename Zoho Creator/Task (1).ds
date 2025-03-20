@@ -1,0 +1,3027 @@
+/*
+ * Author       : jaydev.chhaiya_adhir
+ * Generated on : 19-Feb-2025 11:20:31
+ * Version      : 1.0
+ */
+ application "Task"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "Asia/Kolkata"
+ 	time format = "24-hr"
+ 	forms
+	{
+		form Dealer
+		{
+			success message = "Dealer Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Dealership_Name
+			(
+    			type = text
+				displayname = "Dealership Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Dealership_Code
+			(
+    			type = text
+				displayname = "Dealership Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Status
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Approved","Pending","Rejected"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			City
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Jamnagar","Rajkot","Ahemdabad"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form DTC_Details
+		{
+			displayname = "DTC Details"
+			success message = "Dtc Detail Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			DTC_Codes
+			(
+    			type = text
+				displayname = "DTC Codes"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			DTC_Description
+			(
+    			type = textarea
+				displayname = "DTC Description"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Active_Status
+			(
+				type = picklist
+				displayname = "Active Status"
+				maxchar = 100
+				values = {"Pending","Solved"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			System_DTC_Logged_in
+			(
+    			type = text
+				displayname = "System DTC Logged in"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form inquiry_module
+		{
+			displayname = "inquiry module"
+			success message = "Inquiry Module Added Successfully"
+			Section1
+			(
+				type = section
+				displayname = "Dealer Techline"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Dealership_Name_i
+			(
+				type = picklist	
+				displayname = "Dealership Name"
+				values  = Dealer.ID
+    			displayformat = [Dealership_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Dealership_Code_i
+			(
+    			type = text
+				displayname = "Dealership Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Date_i
+			(
+    			type = date
+				displayname = "Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+			City_i
+			(
+    			type = text
+				displayname = "City"
+	 			row = 1
+	 			column = 2   
+				width = medium
+			)
+			Status_i
+			(
+    			type = text
+				displayname = "Status"
+	 			row = 1
+	 			column = 3   
+				width = medium
+			)
+			Case_No_i
+			(
+    			type = text
+				displayname = "Case No."
+	 			row = 1
+	 			column = 3   
+				width = medium
+			)
+			Auto_Number_i
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 3   
+				width = medium
+			)
+			Technician_Details
+			(
+				type = section
+				displayname = "Technician Details"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Technician_Name_i
+			(
+				type = picklist	
+				displayname = "Technician_Name"
+				values  = technician_module.ID
+    			displayformat = [Technician_Name]
+				sortorder = ascending
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Technician_Code_i
+			(
+    			type = text
+				displayname = "Technician Code"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			must have Position_i
+			(
+    			type = text
+				displayname = "Position"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			must have Contact_No_i
+			(
+    			type = phonenumber
+				displayname = "Contact No"
+	 			row = 2
+	 			column = 3   
+				width = medium
+				personal data = true
+			)
+			Vehicle_Details
+			(
+				type = section
+				displayname = "Vehicle Details"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			must have VIN_i
+			(
+				type = picklist	
+				displayname = "VIN"
+				values  = Vehicle.ID
+    			displayformat = [VIN]
+				sortorder = ascending
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Model_Description_i
+			(
+    			type = textarea
+				displayname = "Model Description"
+				height = 100px
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Vechicle_immoblished_i
+			(
+				type = radiobuttons
+				displayname = "Vechicle immoblished"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Engine_No_i
+			(
+    			type = text
+				displayname = "Engine No"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Reg_Date_i
+			(
+    			type = date
+				displayname = "Reg. Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Fuel_Type_i
+			(
+    			type = text
+				displayname = "Fuel Type"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			must have RO_No_i
+			(
+    			type = text
+				displayname = "RO No"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			must have Model_code_i
+			(
+    			type = text
+				displayname = "Model_code"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			must have Milage_i
+			(
+				type = number
+				displayname = "Milage"
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			RO_Date_i
+			(
+    			type = date
+				displayname = "RO Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			Accessories_i
+			(
+    			type = textarea
+				displayname = "Accessories"
+				height = 100px
+	 			row = 3
+	 			column = 3   
+				width = medium
+			)
+			Inquiry_Details_i
+			(
+				type = section
+				displayname = "Inquiry Details"
+				visibility = true
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			Request_Type_i
+			(
+				type = picklist
+				displayname = "Request Type"
+				maxchar = 100
+				values = {"inquiry","Product Inquiry"}
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			must have Recommended_Repair_i
+			(
+    			type = textarea
+				displayname = "Recommended_Repair"
+				height = 100px
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			must have Customer_Complaint_Symptom_i
+			(
+    			type = textarea
+				displayname = "Customer Complaint/Symptom"
+				height = 100px
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Attach_any_Information_i
+			(
+    			type = upload file
+				displayname = "Attach any Information"
+				browse = local_drive
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Device_Classification_i
+			(
+    			type = text
+				displayname = "Device Classification"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			must have Diagnosis_investigation_Result_i
+			(
+    			type = textarea
+				displayname = "Diagnosis /investigation Result"
+				height = 100px
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Additional_attachment_Service_Repair_or_any_other__i
+			(
+    			type = upload file
+				displayname = "Additional attachment (Service & Repair or any other)"
+				browse = local_drive
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			trouble_code_i
+			(
+				type = picklist	
+				displayname = "trouble code"
+				values  = trouble_code.ID
+    			displayformat = [Trouble_Code]
+				sortorder = ascending
+	 			row = 4
+	 			column = 2   
+				width = medium
+			)
+			must have Subject_field_i
+			(
+    			type = text
+				displayname = "Subject"
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			Registration_i
+			(
+    			type = text
+				displayname = "Registration"
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			Actual_Diagnosis_Fault_Finding_Possible_Cause_i
+			(
+    			type = text
+				displayname = "Actual_Diagnosis Fault Finding & Possible Cause"
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			Vechicle_Service_Repair_History_if_Applicable__i
+			(
+    			type = textarea
+				displayname = "Vechicle Service /Repair History (if Applicable)"
+				height = 100px
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			must have Attach_snapshot_of_DRM_i
+			(
+    			type = upload file
+				displayname = "Attach snapshot of DRM"
+				browse = local_drive
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			Priority_i
+			(
+    			type = text
+				displayname = "Priority"
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			Relevent_Repair_History_i
+			(
+    			type = text
+				displayname = "Relevent Repair History"
+	 			row = 4
+	 			column = 3   
+				width = medium
+			)
+			DTC_Details_i
+			(
+				type = grid
+				displayname = "DTC Details"
+				DTC_Codes_i
+				(
+					type = picklist	
+					displayname = "DTC Codes"
+					values  = DTC_Details.ID
+    				displayformat = [DTC_Codes]
+					sortorder = ascending
+					width = medium
+				)
+				DTC_Description_i
+				(
+    				type = textarea
+					displayname = "DTC Description"
+					height = 100px
+					width = medium
+				)
+				Status_i
+				(
+    				type = text
+					displayname = "Status"
+					width = medium
+				)
+				System_DTC_Logged_in_i
+				(
+    				type = text
+					displayname = "System DTC Logged in"
+					width = medium
+				)
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Part_Details_i
+			(
+				type = grid
+				displayname = "Part Details"
+				Part_No_i
+				(
+					type = picklist	
+					displayname = "Part No"
+					values  = Part_Data.ID
+    				displayformat = [Part_No]
+					sortorder = ascending
+					width = medium
+				)
+				must have Part_Quantity_i
+				(
+					type = number
+					displayname = "Part Quantity"
+					width = medium
+				)
+				must have Description_i
+				(
+    				type = textarea
+					displayname = "Description"
+					height = 100px
+					width = medium
+				)
+				Price_i
+				(
+					displayname = "Price"
+					type = INR
+					format = commadotindian
+					width = medium
+				)
+				Total_i
+				(
+					displayname = "Total"
+					type = INR
+					format = commadotindian
+					width = medium
+				)
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Section2
+			(
+				type = section
+				displayname = "Section"
+				visibility = true
+	 			row = 7
+	 			column = 0   
+				width = medium
+			)
+			Grand_Total_i
+			(
+				displayname = "Grand Total"
+				type = INR
+				format = commadotindian
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Section
+			(
+				type = section
+				visibility = true
+	 			row = 8
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "Add your Note here ..."
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Part_Data
+		{
+			displayname = "Part Data"
+			success message = "Part Datum Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Part_No
+			(
+    			type = text
+				displayname = "Part No"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Description
+			(
+    			type = textarea
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Price
+			(
+				type = decimal
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form technician_module
+		{
+			displayname = "technician module"
+			success message = "Technician Module Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			must have Technician_Name
+			(
+    			type = text
+				displayname = " Technician Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Technician_Code
+			(
+    			type = text
+				displayname = "Technician Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Position
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Contact_No
+			(
+    			type = phonenumber
+				displayname = "Contact No"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Dealer
+			(
+				type = picklist	
+				values  = Dealer.ID
+    			displayformat = [Dealership_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form trouble_code
+		{
+			displayname = "trouble code"
+			success message = "Trouble Code Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Device_Classification
+			(
+    			type = text
+				displayname = "Device Classification"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Priority
+			(
+				type = picklist
+				maxchar = 100
+				values = {"High","Low","Medium"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Auto_Number
+			(
+    			type = autonumber
+				displayname = "Auto Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Trouble_Code
+			(
+    			type = text
+				displayname = "Trouble Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Vehicle
+		{
+			success message = "Vehicle Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			must have VIN
+			(
+    			type = text
+				displayname = "VIN "
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Engine_No
+			(
+    			type = text
+				displayname = "Engine No"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Registration
+			(
+    			type = text
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Mileage
+			(
+				type = number
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Reg_Date
+			(
+    			type = date
+				displayname = "Reg. Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Fuel_Type
+			(
+				type = picklist
+				displayname = "Fuel Type"
+				maxchar = 100
+				values = {"Petrol","Diesel","Electric"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Model_Description
+			(
+    			type = textarea
+				displayname = "Model Description"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have RO_No
+			(
+    			type = text
+				displayname = "RO No"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have RO_Date
+			(
+    			type = date
+				displayname = "RO Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Vehicle_Immobilized
+			(
+				type = radiobuttons
+				displayname = "Vehicle Immobilized"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			must have Model_Code
+			(
+    			type = text
+				displayname = "Model Code"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Accessories
+			(
+    			type = textarea
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Dealers
+		{
+			displayName = "All Dealers"
+			show all rows from Dealer    
+			(
+				Dealership_Name as "Dealership Name"
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Email
+				Status
+				City
+				Auto_Number as "Auto Number"
+				Dealership_Code as "Dealership Code"
+			)
+		}
+		default list All_Technician_Modules
+		{
+			displayName = "All Technician Modules"
+			show all rows from technician_module    
+			(
+				Technician_Name as " Technician Name"
+				Technician_Code as "Technician Code"
+				Contact_No as "Contact No"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Auto_Number as "Auto Number"
+				Dealer
+				Position
+			)
+		}
+		default list All_Vehicles
+		{
+			displayName = "All Vehicles"
+			show all rows from Vehicle    
+			(
+				VIN as "VIN "
+				Engine_No as "Engine No"
+				Registration
+				Mileage
+				Reg_Date as "Reg. Date"
+				Fuel_Type as "Fuel Type"
+				Model_Description as "Model Description"
+				RO_No as "RO No"
+				RO_Date as "RO Date"
+				Model_Code as "Model Code"
+				Accessories
+				Vehicle_Immobilized as "Vehicle Immobilized"
+			)
+		}
+		default list All_Trouble_Codes
+		{
+			displayName = "All Trouble Codes"
+			show all rows from trouble_code    
+			(
+				Device_Classification as "Device Classification"
+				Priority
+				Auto_Number as "Auto Number"
+				Trouble_Code as "Trouble Code"
+			)
+		}
+		default list All_Dtc_Details
+		{
+			displayName = "All Dtc Details"
+			show all rows from DTC_Details    
+			(
+				DTC_Codes as "DTC Codes"
+				DTC_Description as "DTC Description"
+				Active_Status as "Active Status"
+				System_DTC_Logged_in as "System DTC Logged in"
+				Auto_Number as "Auto Number"
+			)
+		}
+		default list All_Part_Data
+		{
+			displayName = "All Part Data"
+			show all rows from Part_Data    
+			(
+				Part_No as "Part No"
+				Description
+				Price
+				Auto_Number as "Auto Number"
+			)
+		}
+		default list All_Inquiry_Modules
+		{
+			displayName = "All Inquiry Modules"
+			show all rows from inquiry_module    
+			(
+				Dealership_Name_i as "Dealership Name"
+				VIN_i as "VIN"
+				Engine_No_i as "Engine No"
+				Model_Description_i as "Model Description"
+				Reg_Date_i as "Reg. Date"
+				Vechicle_immoblished_i as "Vechicle immoblished"
+				RO_No_i as "RO No"
+				Model_code_i as "Model_code"
+				Milage_i as "Milage"
+				Request_Type_i as "Request Type"
+				Subject_field_i as "Subject"
+				Registration_i as "Registration"
+				Actual_Diagnosis_Fault_Finding_Possible_Cause_i as "Actual_Diagnosis Fault Finding & Possible Cause"
+				Recommended_Repair_i as "Recommended_Repair"
+				Technician_Name_i as "Technician_Name"
+				Position_i as "Position"
+				Contact_No_i as "Contact No"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Technician_Code_i as "Technician Code"
+				Dealership_Code_i as "Dealership Code"
+				Date_i as "Date"
+				Customer_Complaint_Symptom_i as "Customer Complaint/Symptom"
+				Vechicle_Service_Repair_History_if_Applicable__i as "Vechicle Service /Repair History (if Applicable)"
+				Attach_any_Information_i as "Attach any Information"
+				Device_Classification_i as "Device Classification"
+				Diagnosis_investigation_Result_i as "Diagnosis /investigation Result"
+				Priority_i as "Priority"
+				Attach_snapshot_of_DRM_i as "Attach snapshot of DRM"
+				Relevent_Repair_History_i as "Relevent Repair History"
+				Additional_attachment_Service_Repair_or_any_other__i as "Additional attachment (Service & Repair or any other)"
+				Part_Details_i.Part_Quantity_i as "Part Details"
+				Grand_Total_i as "Grand Total"
+				Accessories_i as "Accessories"
+				RO_Date_i as "RO Date"
+				Case_No_i as "Case No."
+				City_i as "City"
+				Status_i as "Status"
+				Auto_Number_i as "Auto Number"
+				Fuel_Type_i as "Fuel Type"
+				trouble_code_i as "trouble code"
+				DTC_Details_i.DTC_Codes_i as "DTC Details"
+			)
+		}
+		list All_inquiry_Report
+		{
+			displayName = "All inquiry Report"
+			show all rows from inquiry_module    
+			(
+				Dealership_Name_i as "Dealership Name"
+				Dealership_Code_i as "Dealership Code"
+				Date_i as "Date"
+				City_i as "City"
+				Status_i as "Status"
+				Case_No_i as "Case No."
+				Auto_Number_i as "Auto Number"
+				Technician_Code_i as "Technician Code"
+				Position_i as "Position"
+				Contact_No_i as "Contact No"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				VIN_i as "VIN"
+				Model_Description_i as "Model Description"
+				Vechicle_immoblished_i as "Vechicle immoblished"
+				Engine_No_i as "Engine No"
+				Reg_Date_i as "Reg. Date"
+				Fuel_Type_i as "Fuel Type"
+				RO_No_i as "RO No"
+				Model_code_i as "Model_code"
+				Milage_i as "Milage"
+				RO_Date_i as "RO Date"
+				Accessories_i as "Accessories"
+				Request_Type_i as "Request Type"
+				Recommended_Repair_i as "Recommended_Repair"
+				Customer_Complaint_Symptom_i as "Customer Complaint/Symptom"
+				Attach_any_Information_i as "Attach any Information"
+				Device_Classification_i as "Device Classification"
+				Diagnosis_investigation_Result_i as "Diagnosis /investigation Result"
+				Additional_attachment_Service_Repair_or_any_other__i as "Additional attachment (Service & Repair or any other)"
+				trouble_code_i as "trouble code"
+				Subject_field_i as "Subject"
+				Registration_i as "Registration"
+				Actual_Diagnosis_Fault_Finding_Possible_Cause_i as "Actual_Diagnosis Fault Finding & Possible Cause"
+				Vechicle_Service_Repair_History_if_Applicable__i as "Vechicle Service /Repair History (if Applicable)"
+				Attach_snapshot_of_DRM_i as "Attach snapshot of DRM"
+				Priority_i as "Priority"
+				Relevent_Repair_History_i as "Relevent Repair History"
+				Grand_Total_i as "Grand Total"
+				Dealership_Name_i.Email
+				Dealership_Name_i.ID
+				Part_Details_i.Part_No_i as "Part Details"
+				DTC_Details_i as "DTC Details"
+				(
+					field = DTC_Details_i.DTC_Codes_i + " " + DTC_Details_i.Status_i
+				)
+				Dealership_Name_i.Status
+				custom action "change status"
+				(
+	  			workflow = change_status
+				show action in edit record menu = true
+				column header = "change status"
+				condition = (Dealership_Name_i.Status == "Pending")
+				)
+			)
+			conditional formatting
+			(
+				"New Formatting"
+				{
+				condition = (Dealership_Name_i.Email is not null)
+				fields = [Dealership_Name_i.Email]
+				format = "color:#333;background-color:#f1c40f;"
+				}
+				"New Formatting"
+				{
+				condition = (Dealership_Name_i.Email is not null)
+				fields = [Dealership_Name_i.Email]
+				format = "color:#333;background-color:#f1c40f;"
+				}
+				"New Formatting"
+				{
+				condition = (Dealership_Name_i.Email is not null)
+				fields = [Dealership_Name_i.Email]
+				format = "color:#333;background-color:#f1c40f;"
+				}
+				"id green"
+				{
+				condition = (Dealership_Name_i.ID != 0)
+				fields = [Dealership_Name_i.ID]
+				format = "color:#000000;background-color:#1bbc9b;"
+				}
+			)
+		}
+	}
+	pages
+	{
+		page Dashboard
+		{
+			displayname = "Dashboard"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet()\ncontent\n&lt;%{\n\t%&gt;\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;\n    &lt;style&gt;\n        body {\n            margin: 0;\n            font-family: Arial, Helvetica, sans-serif;\n        }\n\n        .topnav {\n            overflow: hidden;\n            background-color: #333;\n        }\n\n        .topnav a {\n            float: left;\n            color: #f2f2f2;\n            text-align: center;\n            padding: 14px 16px;\n            text-decoration: none;\n            font-size: 17px;\n        }\n\n        .topnav a:hover {\n            background-color: #ddd;\n            color: black;\n        }\n\n        .topnav a.active {\n            background-color: #04AA6D;\n            color: white;\n        }\n    &lt;\/style&gt;\n    &lt;script&gt;\n        function navigateToForm(formName) {\n            \n            window.location.href = &quot;https:\/\/creatorapp.zoho.in\/jaydev.chhaiya_adhir\/task#Form:&quot; ;\n        }\n    &lt;\/script&gt;\n&lt;\/head&gt;\n&lt;body&gt;\n    &lt;div class=&quot;topnav&quot;&gt;\n        &lt;!-- Use onclick for JavaScript navigation --&gt;\n        &lt;a href=&quot;#home&quot; onclick=&quot;navigateToForm(&apos;Home_Form&apos;)&quot;&gt;Home&lt;\/a&gt;\n        &lt;a href=&quot;#news&quot; onclick=&quot;navigateToForm(&apos;TechLine_Inquiries_Form&apos;)&quot;&gt;TechLine Inquiries&lt;\/a&gt;\n        &lt;a href=&quot;#Dealer&quot; onclick=&quot;navigateToForm(&apos;Dealers_Form&apos;)&quot;&gt;Dealers&lt;\/a&gt;\n        &lt;a href=&quot;#DTC_Details&quot; onclick=&quot;navigateToForm(&apos;Techline_News_Form&apos;)&quot;&gt;Techline News&lt;\/a&gt;\n        &lt;a href=&quot;#trouble_code&quot; onclick=&quot;navigateToForm(&apos;Trouble_Code_Form&apos;)&quot;&gt;Trouble Code&lt;\/a&gt;\n    &lt;\/div&gt;\n\n    &lt;div style=&quot;padding-left:16px&quot;&gt;\n        &lt;!-- Content or placeholder for forms --&gt;\n    &lt;\/div&gt;\n&lt;\/body&gt;\n&lt;\/html&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'new-window'\n\n\tcolor = '#FF4C2F'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Dashboard'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'tech_all_inquiry'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'popup'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Trouble_Code1'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Html_Tabular
+		{
+			displayname = "Html Tabular"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\tappLinkName = 'thisapp'\n\tlinkName = 'inquiry_module'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet1' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet1()\ncontent\n&lt;%{\n\t%&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;style&gt;\n    body {\n        font-family: Arial, sans-serif;\n        margin: 0;\n        padding: 0;\n        background-color: #f4f4f4;\n    }\n\n    .tableFixedHead {\n        overflow-y: auto;\n        max-height: 300px;\n        margin: 20px auto;\n        background-color: #fff;\n        border-radius: 8px;\n        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n        padding: 10px;\n        width: 80%;\n    }\n\n    table {\n        border-collapse: collapse;\n        width: 100%;\n    }\n\n    th, td {\n        padding: 12px;\n        text-align: left;\n        border: 1px solid #ddd;\n        font-size: 14px;\n    }\n\n    th {\n        background-color: #007BFF;\n        color: white;\n        font-weight: bold;\n    }\n\n    td {\n        background-color: #f9f9f9;\n        color: #333;\n    }\n\n    tr:nth-child(even) td {\n        background-color: #f2f2f2;\n    }\n\n    tr:hover td {\n        background-color: #d9e9ff;\n        cursor: pointer;\n    }\n\n    .tableFixedHead th {\n        position: sticky;\n        top: 0;\n        z-index: 2;\n    }\n    \n    \/* Style for mobile responsiveness *\/\n    @media (max-width: 768px) {\n        .tableFixedHead {\n            width: 100%;\n        }\n\n        th, td {\n            font-size: 12px;\n            padding: 8px;\n        }\n    }\n&lt;\/style&gt;\n&lt;\/head&gt;\n&lt;body&gt;\n&lt;div class=&quot;tableFixedHead&quot;&gt;\n    &lt;table&gt;\n&lt;%\n\tfetdata = inquiry_module[ID != 0];\n\ttable1 = &quot;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Case NO&lt;\/th&gt;&lt;th&gt;Subject&lt;\/th&gt;&lt;th&gt;VIN&lt;\/th&gt;&lt;th&gt;Request Type&lt;\/th&gt;&lt;th&gt;Model Description&lt;\/th&gt;&lt;th&gt;Model Code&lt;\/th&gt;&lt;th&gt;Status&lt;\/th&gt;&lt;\/tr&gt;&quot;;\n\tfor each  rec in fetdata\n\t{\n\t\ttable1 = table1 + &quot;&lt;tr&gt;&lt;td&gt;&quot; + rec.Case_No_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.Subject_field_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.VIN_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.Request_Type_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.Model_Description_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.Model_code_i + &quot;&lt;\/td&gt;&lt;td&gt;&quot; + rec.DTC_Details_i.Status_i + &quot;&lt;\/td&gt;&lt;\/tr&gt;&quot;;\n\t}\n\ttable2 = table1 + &quot;&lt;\/table&gt;&quot;;\n\t%&gt;\n&lt;%=table2%&gt;\n&lt;\/div&gt;\n&lt;\/body&gt;\n&lt;\/html&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Navbar
+		{
+			displayname = "Navbar"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'technician_module'\n\t\ttarget = 'new-window'\n\n\tcolor = '#000000'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'Vehicle'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'new-window'\n\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'technician_module'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\tappLinkName = 'thisapp'\n\tlinkName = 'Vehicle'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Techline_Inquires
+		{
+			displayname = "Techline Inquires"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'technician_module'\n\t\ttarget = 'new-window'\n\n\tcolor = '#FF4C2F'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Dashboard'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'tech_all_inquiry'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Trouble_Code1'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\tappLinkName = 'thisapp'\n\tlinkName = 'Dealer'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Trouble_Code1
+		{
+			displayname = "Trouble Code"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'technician_module'\n\t\ttarget = 'new-window'\n\n\tcolor = '#FF4C2F'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Dashboard'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'tech_all_inquiry'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Trouble_Code1'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\tappLinkName = 'thisapp'\n\tlinkName = 'trouble_code'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page Technical_Module
+		{
+			displayname = "Technical Module"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenForm'\n\t\tcomponentLinkName = 'technician_module'\n\t\ttarget = 'new-window'\n\n\tcolor = '#FF4C2F'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Dashboard'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenReport'\n\t\tcomponentLinkName = 'All_Inquiry_Modules'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Trouble_Code1'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\tappLinkName = 'thisapp'\n\tlinkName = 'technician_module'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+		page tech_all_inquiry
+		{
+			displayname = "tech all inquiry"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<panel elementName=\"Panel\"\n \n >\n\t<pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '0px'\n\tpaddingLeft = '0px'\n\tpaddingRight = '0px'\n\tpaddingBottom = '20px'\n\tbgColor = '#FFFFFF'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='fill'\n\t\theight='89.4688px'\n>\n\t<pc \n\t\tpadding = '17px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'new-window'\n\n\tcolor = '#FF4C2F'\n\tsize = '36px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE HOME PAGE'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='fill'\n>\n\t<pc \n\t\tpaddingTop = '15px'\n\tpaddingLeft = '20px'\n\tpaddingRight = '15px'\n\tpaddingBottom = '18px'\n\n\t\twidth = '100%'\n\t\thAlign = 'center'\n\t\tvAlign = 'middle'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t<text \n\n\tmarginRight = '20px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#FF4C2F'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginRight = '120px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '28px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Dashboard'\n\t\ttarget = 'same-window'\n\n\tmarginRight = '10px' \n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'HOME'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'tech_all_inquiry'\n\t\ttarget = 'same-window'\n\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'TECHLINE INQURIES'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Techline_Inquires'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'DEALERS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Technical_Module'\n\t\ttarget = 'same-window'\n\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'ISUZU TECHLINE NEWS'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#000000'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = '|'\n>\n<\/text>\n\n<\/pc><pc \n\t\n>\n\t<text \n    action = 'OpenPage'\n\t\tcomponentLinkName = 'Trouble_Code1'\n\t\ttarget = 'same-window'\n\n\tmarginLeft = '10px'\n\tmarginBottom = '0px'\n\tmarginTop = '0px'\n\tcolor = '#0ABB51'\n\tsize = '16px'\n\ttype = 'Text'\n\n\n\n\t  \n\t  value = 'Trouble Codes'\n>\n<\/text>\n\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr><pr \n\t\t\twidth='fill'\n\t\theight='20px'\n>\n\t<pc \n\t\n\t\twidth = '100%'\n>\n\t<pr \n\t\t\twidth='auto'\n\t\theight='auto'\n>\n\t<pc \n\t\n>\n\t\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/pc>\n<\/pr>\n<\/panel>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<report \n\telementName=\"Report\"\n\n\t\tappLinkName = 'thisapp'\n\t\tlinkName = 'All_Inquiry_Modules'\n\t\n\t\tiszreport = 'false'\n\theightType = 'auto'\n\theightValue = '700'\n\n\/>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>"
+		}
+	}
+
+
+		workflow
+		{
+		form
+		{
+			Id_Auto_GEnerate as "Id Auto GEnerate"
+			{
+				type =  form
+				form = Dealer
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											auto_id = input.Auto_Number;
+										input.Dealership_Code = "DL00" + auto_id;
+						)
+					}
+				}
+
+			}
+			Auto as "Auto"
+			{
+				type =  form
+				form = Dealer
+				record event = on add
+					status = inactive
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											auto_id = input.Auto_Number;
+										input.Dealership_Code = "DL00-" + auto_id;
+						)
+					}
+				}
+
+			}
+			Disable_Field as "Disable Field"
+			{
+				type =  form
+				form = Dealer
+				record event = on add
+
+				field rules
+				{
+					actions 
+					{
+						disable Dealership_Code;
+					}
+				}
+
+			}
+			Tech_Auto_Id as "Tech_Auto_Id"
+			{
+				type =  form
+				form = technician_module
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											auto_id = input.Auto_Number;
+										input.Technician_Code = "TL00" + auto_id;
+						)
+					}
+				}
+
+			}
+			Disable_Field1 as "Disable Field"
+			{
+				type =  form
+				form = technician_module
+				record event = on add
+
+				field rules
+				{
+					actions 
+					{
+						disable Technician_Code;
+					}
+				}
+
+			}
+			Trouble_Code_Auto_id as "Trouble_Code Auto_id"
+			{
+				type =  form
+				form = trouble_code
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											trouble_code = input.Auto_Number;
+										input.Trouble_Code = "100" + trouble_code;
+						)
+					}
+				}
+
+			}
+			Disable_Field_Trouble_Cod as "Disable Field Trouble Code"
+			{
+				type =  form
+				form = trouble_code
+				record event = on add
+
+				field rules
+				{
+					actions 
+					{
+						disable Trouble_Code;
+					}
+				}
+
+			}
+			DTC_Auto_id as "DTC Auto_id"
+			{
+				type =  form
+				form = DTC_Details
+				record event = on add
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											dtc_auto = input.Auto_Number;
+										input.DTC_Codes = "DTC00" + dtc_auto;
+						)
+					}
+				}
+
+			}
+			Disable_Field_DTC as "Disable Field DTC"
+			{
+				type =  form
+				form = DTC_Details
+				record event = on add
+
+				field rules
+				{
+					actions 
+					{
+						disable DTC_Codes;
+					}
+				}
+
+			}
+			Populate_Detail as "Populate Detail"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add
+
+				on user input of Dealership_Name_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											fet = Dealer[ID != 0];
+										deal_name = input.Dealership_Name_i;
+										input.Date_i = zoho.currenttime;
+										for each  var1 in fet
+										{
+											if(deal_name == var1)
+											{
+												input.Dealership_Code_i = var1.Dealership_Code;
+												input.City_i = var1.City;
+												input.Status_i = var1.Status;
+											}
+										}
+										// fet1 = technician_module[ID != 0];
+										// // input.Date_i=zoho.currenttime;
+										// for each tech in fet1
+										// {
+										// input.Technician_Code_i = tech.Technician_Code;
+										// input.Technician_Name_i =tech.Technician_Name;
+										// input.Contact_No_i = tech.Contact_No;
+										// }
+						)
+					}
+				}
+
+			}
+			Auto_Case_Number as "Auto Case Number"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											disable Case_No_i;
+										case_auto1 = inquiry_module[ID != 0].maximum(Auto_Number_i);
+										// case_auto=input.Auto_Number;
+										new_word = ifnull(case_auto1,0) + 1;
+										input.Case_No_i = "C00" + new_word;
+						)
+					}
+				}
+
+			}
+			VIN_History as "VIN History"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add
+
+				on user input of VIN_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											vehicle_details1 = Vehicle[VIN != null];
+										vid = input.VIN_i;
+										for each  v1 in vehicle_details1
+										{
+											if(vid == v1)
+											{
+												input.Milage_i = v1.Mileage;
+												input.Reg_Date_i = v1.Reg_Date;
+												input.RO_Date_i = v1.RO_Date;
+												input.RO_No_i = v1.RO_No;
+												input.Engine_No_i = v1.Engine_No;
+												input.Model_code_i = v1.Model_Code;
+												input.Fuel_Type_i = v1.Fuel_Type;
+												input.Model_Description_i = v1.Model_Description;
+												// 	input.VIN_i = v1.VIN ;
+												input.Accessories_i = v1.Accessories;
+												input.Vechicle_immoblished_i = v1.Vehicle_Immobilized;
+											}
+										}
+						)
+					}
+				}
+
+			}
+			Technician_data_display as "Technician data display"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add
+
+				on user input of Technician_Name_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											techDetail = technician_module[ID != 0];
+										techname = input.Technician_Name_i;
+										for each  tech1 in techDetail
+										{
+											if(techname == tech1)
+											{
+												input.Contact_No_i = tech1.Contact_No;
+												input.Technician_Code_i = tech1.Technician_Code;
+												input.Position_i = tech1.Position;
+											}
+										}
+						)
+					}
+				}
+
+			}
+			Trouble_Code_fetch_Data as "Trouble_Code fetch Data"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add
+
+				on user input of trouble_code_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											trouble_data = trouble_code[ID != 0];
+										trouble_code = input.trouble_code_i;
+										for each  tro1 in trouble_data
+										{
+											if(trouble_code == tro1)
+											{
+												input.Device_Classification_i = tro1.Device_Classification;
+												input.Priority_i = tro1.Priority;
+											}
+										}
+						)
+					}
+				}
+
+			}
+			DTC_Detail_Fetch as "DTC Detail Fetch"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add or edit
+
+				on user input of DTC_Details_i.DTC_Codes_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											data = DTC_Details[ID != 0];
+										for each  dtc_data in data
+										{
+											if(row.DTC_Codes_i = dtc_data)
+											{
+												row.DTC_Description_i=dtc_data.DTC_Description;
+												row.Status_i=dtc_data.Active_Status;
+												row.System_DTC_Logged_in_i=dtc_data.System_DTC_Logged_in;
+											}
+										}
+										// data = DTC_Details[ID != 0];
+										// for each subform_row in input.DTC_Details_i
+										// {
+										//     for each dtc_data in data
+										//     {
+										//         if(subform_row.DTC_Codes_i == dtc_data.DTC_Codes)
+										//         {
+										//             subform_row.DTC_Description_i = dtc_data.DTC_Description;
+										//             subform_row.Status_i = dtc_data.Active_Status;
+										//             subform_row.System_DTC_Logged_in_i = dtc_data.System_DTC_Logged_in;
+										//             break; 
+										//         }
+										//     }
+										// }
+						)
+					}
+				}
+
+			}
+			Part_Data_Fetch as "Part Data Fetch"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add or edit
+
+				on user input of Part_Details_i.Part_No_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// data = Part_Data[ID == row.Part_No_i];
+										// for each  pt_data in data
+										// {
+										// 	// // 	if(row.Part_No_i = pt_data)
+										// 	// 		row.Price_i = pt_data.Price;
+										// 	// 		row.Description_i = pt_data.Description;
+										// 	// 		// 		row.Part_Quantity_i=pt_data.p
+										// }
+										data = Part_Data[ID == row.Part_No_i];
+										for each  ptdata in data
+										{
+											row.Description_i=ptdata.Description;
+											row.Price_i=ptdata.Price;
+										}
+						)
+					}
+				}
+
+			}
+			Part_Data_Total as "Part Data Total"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add or edit
+
+				on user input of Part_Details_i.Part_Quantity_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											row.Total_i=row.Part_Quantity_i * row.Price_i;
+										temp_total = 0.0;
+										for each  var1 in input.Part_Details_i
+										{
+											temp_total = temp_total + var1.Total_i;
+										}
+										input.Grand_Total_i = temp_total;
+						)
+					}
+				}
+
+			}
+			tabular_form as "tabular form"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add or edit
+
+				on user input of Case_No_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Case_No_i != null)
+										{
+											// Fetch related data from Cases form
+											matching_cases = inquiry_module[Case_No_i == input.Case_No_i];
+											// Start building HTML for the table
+											html_content = "<table border='1' style='width:100%; text-align:center;'>";
+											html_content = html_content + "<tr><th>Case No</th><th>Subject</th><th>VIN</th><th>Request Type</th><th>Model Description</th><th>Model Code</th><th>Status</th></tr>";
+											for each  case_record in matching_cases
+											{
+												html_content = html_content + "<tr>";
+												html_content = html_content + "<td>" + case_record.Case_No_i + "</td>";
+												html_content = html_content + "<td>" + case_record.Subject_field_i + "</td>";
+												html_content = html_content + "<td>" + case_record.VIN_i + "</td>";
+												html_content = html_content + "<td>" + case_record.Request_Type_i + "</td>";
+												html_content = html_content + "<td>" + case_record.Model_Description_i + "</td>";
+												html_content = html_content + "<td>" + case_record.Model_code_i + "</td>";
+												html_content = html_content + "<td>" + case_record.Status_i + "</td>";
+												html_content = html_content + "</tr>";
+											}
+											html_content = html_content + "</table>";
+											// Assign the HTML to the snippet field
+											Generated_Table = html_content;
+										}
+										else
+										{
+											Generated_Table = "No data available for the entered Case No.";
+										}
+										// if(input.Case_No_i != null)
+										// {
+										// 	matching_cases = inquiry_module[Case_No_i == input.Case_No_i];
+										// 	table_content = "Case No\tSubject\tVIN\tRequest Type\tModel Description\tModel Code\tStatus\n";
+										// 	for each  case_record in matching_cases
+										// 	{
+										// 		table_content = table_content + case_record.Case_No_i + "\t" + case_record.Subject_field_i + "\t" + case_record.VIN_i + "\t" + case_record.Request_Type_i + "\t" + case_record.Model_Description_i + "\t" + case_record.Model_code_i + "\t" + case_record.Status_i + "\n";
+										// 	}
+										// 	input.Generated_Table = table_content;
+										// 	// Assign the generated plain-text table
+										// }
+										// else
+										// {
+										// 	input.Generated_Table = "No data available for the entered Case No.";
+										// }
+						)
+					}
+				}
+
+			}
+			vin_fetch as "vin fetch"
+			{
+				type =  form
+				form = inquiry_module
+				record event = on add or edit
+
+				on user input of VIN_i
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// if(input.VIN_i != null)
+										// {
+										matching_cases = inquiry_module[VIN_i == input.VIN_i];
+										html_content = "<table border='1' style='width:100%; text-align:center;'>";
+										html_content = html_content + "<tr><th>Case No</th><th>Subject</th><th>VIN</th><th>Request Type</th><th>Model Description</th><th>Model Code</th><th>Status</th> <th>Technician Name</th> <th>Dealer Name</th></tr>";
+										for each  case_record in matching_cases
+										{
+											html_content = html_content + "<tr>";
+											html_content = html_content + "<td>" + case_record.Case_No_i + "</td>";
+											html_content = html_content + "<td>" + case_record.Subject_field_i + "</td>";
+											html_content = html_content + "<td>" + case_record.VIN_i.VIN + "</td>";
+											html_content = html_content + "<td>" + case_record.Request_Type_i + "</td>";
+											html_content = html_content + "<td>" + case_record.Model_Description_i + "</td>";
+											html_content = html_content + "<td>" + case_record.Model_code_i + "</td>";
+											html_content = html_content + "<td>" + case_record.Status_i + "</td>";
+											html_content = html_content + "<td>" + case_record.Technician_Name_i.Technician_Name + "</td>";
+											html_content = html_content + "<td>" + case_record.Dealership_Name_i.Dealership_Name + "</td>";
+											html_content = html_content + "</tr>";
+										}
+										html_content = html_content + "</table>";
+										// Assign the HTML to the snippet field
+										input.plain = html_content;
+										// }
+										// else
+										// {
+										// 	input.plain = "No data available for the entered Case No.";
+										// }
+										// if(input.Case_No_i != null)
+										// {
+										// 	matching_cases = inquiry_module[Case_No_i == input.Case_No_i];
+										// 	table_content = "Case No\tSubject\tVIN\tRequest Type\tModel Description\tModel Code\tStatus\n";
+										// 	for each  case_record in matching_cases
+										// 	{
+										// 		table_content = table_content + case_record.Case_No_i + "\t" + case_record.Subject_field_i + "\t" + case_record.VIN_i + "\t" + case_record.Request_Type_i + "\t" + case_record.Model_Description_i + "\t" + case_record.Model_code_i + "\t" + case_record.Status_i + "\n";
+										// 	}
+										// 	input.Generated_Table = table_content;
+										// 	// Assign the generated plain-text table
+										// }
+										// else
+										// {
+										// 	input.Generated_Table = "No data available for the entered Case No.";
+										// }
+						)
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+
+		functions
+		{
+			change_status as "change status"
+			{
+				type =  functions
+				form = inquiry_module
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					update inquiry_module[ID == input.ID]
+					[
+						Status_i = "Approved"
+					]
+					}
+				}
+			}
+		}
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+
+	web
+	{
+		forms
+		{
+			form Dealer
+			{
+				label placement = left
+			}
+			form DTC_Details
+			{
+				label placement = left
+			}
+			form inquiry_module
+			{
+				label placement = left
+			}
+			form Part_Data
+			{
+				label placement = left
+			}
+			form technician_module
+			{
+				label placement = left
+			}
+			form trouble_code
+			{
+				label placement = left
+			}
+			form Vehicle
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Dealers
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Auto_Number as "Auto Number"
+								Dealership_Name as "Dealership Name"
+								Phone_Number as "Phone"
+								Email
+								Status
+								City
+								Dealership_Code as "Dealership Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Dealership_Name as "Dealership Name"
+								Phone_Number as "Phone"
+								Email
+								Status
+								City
+								Auto_Number as "Auto Number"
+								Dealership_Code as "Dealership Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Technician_Modules
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Technician_Name as " Technician Name"
+								Technician_Code as "Technician Code"
+								Contact_No as "Contact No"
+								Auto_Number as "Auto Number"
+								Dealer
+								Position
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Technician_Name as " Technician Name"
+								Technician_Code as "Technician Code"
+								Contact_No as "Contact No"
+								Auto_Number as "Auto Number"
+								Dealer
+								Position
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Vehicles
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								VIN as "VIN "
+								Engine_No as "Engine No"
+								Registration
+								Mileage
+								Reg_Date as "Reg. Date"
+								Fuel_Type as "Fuel Type"
+								Model_Description as "Model Description"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								VIN as "VIN "
+								Engine_No as "Engine No"
+								Registration
+								Mileage
+								Reg_Date as "Reg. Date"
+								Fuel_Type as "Fuel Type"
+								Model_Description as "Model Description"
+								RO_No as "RO No"
+								RO_Date as "RO Date"
+								Model_Code as "Model Code"
+								Accessories
+								Vehicle_Immobilized as "Vehicle Immobilized"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Trouble_Codes
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Device_Classification as "Device Classification"
+								Priority
+								Auto_Number as "Auto Number"
+								Trouble_Code as "Trouble Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Device_Classification as "Device Classification"
+								Priority
+								Auto_Number as "Auto Number"
+								Trouble_Code as "Trouble Code"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Dtc_Details
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								DTC_Codes as "DTC Codes"
+								DTC_Description as "DTC Description"
+								Active_Status as "Active Status"
+								System_DTC_Logged_in as "System DTC Logged in"
+								Auto_Number as "Auto Number"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								DTC_Codes as "DTC Codes"
+								DTC_Description as "DTC Description"
+								Active_Status as "Active Status"
+								System_DTC_Logged_in as "System DTC Logged in"
+								Auto_Number as "Auto Number"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Part_Data
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Part_No as "Part No"
+								Description
+								Price
+								Auto_Number as "Auto Number"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Part_No as "Part No"
+								Description
+								Price
+								Auto_Number as "Auto Number"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Inquiry_Modules
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Dealership_Name_i as "Dealership Name"
+								VIN_i as "VIN"
+								Engine_No_i as "Engine No"
+								Model_Description_i as "Model Description"
+								Reg_Date_i as "Reg. Date"
+								Technician_Name_i as "Technician_Name"
+								City_i as "City"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Dealership_Name_i as "Dealership Name"
+								VIN_i as "VIN"
+								Engine_No_i as "Engine No"
+								Model_Description_i as "Model Description"
+								Reg_Date_i as "Reg. Date"
+								Vechicle_immoblished_i as "Vechicle immoblished"
+								RO_No_i as "RO No"
+								Model_code_i as "Model_code"
+								Milage_i as "Milage"
+								Request_Type_i as "Request Type"
+								Subject_field_i as "Subject"
+								Registration_i as "Registration"
+								Actual_Diagnosis_Fault_Finding_Possible_Cause_i as "Actual_Diagnosis Fault Finding & Possible Cause"
+								Recommended_Repair_i as "Recommended_Repair"
+								Technician_Name_i as "Technician_Name"
+								Position_i as "Position"
+								Contact_No_i as "Contact No"
+								Technician_Code_i as "Technician Code"
+								Dealership_Code_i as "Dealership Code"
+								Date_i as "Date"
+								Customer_Complaint_Symptom_i as "Customer Complaint/Symptom"
+								Vechicle_Service_Repair_History_if_Applicable__i as "Vechicle Service /Repair History (if Applicable)"
+								Attach_any_Information_i as "Attach any Information"
+								Device_Classification_i as "Device Classification"
+								Diagnosis_investigation_Result_i as "Diagnosis /investigation Result"
+								Priority_i as "Priority"
+								Attach_snapshot_of_DRM_i as "Attach snapshot of DRM"
+								Relevent_Repair_History_i as "Relevent Repair History"
+								Additional_attachment_Service_Repair_or_any_other__i as "Additional attachment (Service & Repair or any other)"
+								Part_Details_i.Part_Quantity_i as "Part Details"
+								Grand_Total_i as "Grand Total"
+								Accessories_i as "Accessories"
+								RO_Date_i as "RO Date"
+								Case_No_i as "Case No."
+								City_i as "City"
+								Status_i as "Status"
+								Auto_Number_i as "Auto Number"
+								Fuel_Type_i as "Fuel Type"
+								trouble_code_i as "trouble code"
+								DTC_Details_i.DTC_Codes_i as "DTC Details"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_inquiry_Report
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Dealership_Name_i.ID as "ID"
+								"change status"
+								Date_i as "Date"
+								Part_Details_i.Part_No_i as "Part Details"
+								Contact_No_i as "Contact No"
+								Dealership_Name_i.Email as "Email"
+								Dealership_Code_i as "Dealership Code"
+								Dealership_Name_i as "Dealership Name"
+								VIN_i as "VIN"
+								DTC_Details_i.DTC_Codes_i as "DTC Details"
+								Dealership_Name_i.Status as "Status"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Dealership_Name_i as "Dealership Name"
+								Dealership_Code_i as "Dealership Code"
+								Date_i as "Date"
+								City_i as "City"
+								Status_i as "Status"
+								Case_No_i as "Case No."
+								Auto_Number_i as "Auto Number"
+								Technician_Code_i as "Technician Code"
+								Position_i as "Position"
+								Contact_No_i as "Contact No"
+								VIN_i as "VIN"
+								Model_Description_i as "Model Description"
+								Vechicle_immoblished_i as "Vechicle immoblished"
+								Engine_No_i as "Engine No"
+								Reg_Date_i as "Reg. Date"
+								Fuel_Type_i as "Fuel Type"
+								RO_No_i as "RO No"
+								Model_code_i as "Model_code"
+								Milage_i as "Milage"
+								RO_Date_i as "RO Date"
+								Accessories_i as "Accessories"
+								Request_Type_i as "Request Type"
+								Recommended_Repair_i as "Recommended_Repair"
+								Customer_Complaint_Symptom_i as "Customer Complaint/Symptom"
+								Attach_any_Information_i as "Attach any Information"
+								Device_Classification_i as "Device Classification"
+								Diagnosis_investigation_Result_i as "Diagnosis /investigation Result"
+								Additional_attachment_Service_Repair_or_any_other__i as "Additional attachment (Service & Repair or any other)"
+								trouble_code_i as "trouble code"
+								Subject_field_i as "Subject"
+								Registration_i as "Registration"
+								Actual_Diagnosis_Fault_Finding_Possible_Cause_i as "Actual_Diagnosis Fault Finding & Possible Cause"
+								Vechicle_Service_Repair_History_if_Applicable__i as "Vechicle Service /Repair History (if Applicable)"
+								Attach_snapshot_of_DRM_i as "Attach snapshot of DRM"
+								Priority_i as "Priority"
+								Relevent_Repair_History_i as "Relevent Repair History"
+								Grand_Total_i as "Grand Total"
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+		}
+		menu
+		{
+			space Space
+			{
+				displayname = "space"
+				icon = "tech-desktop"
+
+				section Dealers
+				{
+					displayname = "Dealers"
+					icon = "shopping-stock"
+					form  Dealer
+					{
+						icon = "business-gold"
+					}
+					report All_Dealers
+					{
+						icon = "travel-world"
+					}
+				}
+				section Technician_Modules
+				{
+					displayname = "Technician Modules"
+					icon = "tech-2-pci-card"
+					form  technician_module
+					{
+						icon = "health-flask"
+					}
+					report All_Technician_Modules
+					{
+						icon = "tech-2-l-settings"
+					}
+				}
+				section Vehicles
+				{
+					displayname = "Vehicles"
+					icon = "envir-car"
+					form  Vehicle
+					{
+						icon = "transportation-car"
+					}
+					report All_Vehicles
+					{
+						icon = "travel-world"
+					}
+				}
+				section Trouble_Codes
+				{
+					displayname = "Trouble Codes"
+					icon = "tech-2-l-check"
+					form  trouble_code
+					{
+						icon = "design-code"
+					}
+					report All_Trouble_Codes
+					{
+						icon = "travel-world"
+					}
+				}
+				section Dtc_Details
+				{
+					displayname = "Dtc Details"
+					icon = "users-2-contacts-44"
+					form  DTC_Details
+					{
+						icon = "users-2-contacts-44"
+					}
+					report All_Dtc_Details
+					{
+						icon = "travel-world"
+					}
+				}
+				section Part_Data
+				{
+					displayname = "Part Data"
+					icon = "ui-1-database"
+					form  Part_Data
+					{
+						icon = "ui-1-database"
+					}
+					report All_Part_Data
+					{
+						icon = "travel-world"
+					}
+				}
+				section Inquiry_Modules
+				{
+					displayname = "Inquiry Modules"
+					icon = "envir-panel"
+					form  inquiry_module
+					{
+						icon = "tech-2-l-search"
+					}
+					report All_Inquiry_Modules
+					{
+						icon = "travel-world"
+					}
+					report All_inquiry_Report
+					{
+						icon = "business-laptop-71"
+					}
+				}
+				section Dashboard
+				{
+					displayname = "Dashboard"
+					icon = "ui-1-dashboard-half"
+					page Dashboard
+					{
+						icon = "ui-1-dashboard-half"
+					}
+					page Html_Tabular
+					{
+						icon = "design-2-html5"
+					}
+					page Navbar
+					{
+						icon = "design-window-paragraph"
+					}
+					page Techline_Inquires
+					{
+						icon = "design-window-paragraph"
+					}
+					page Trouble_Code1
+					{
+						icon = "design-code"
+					}
+					page Technical_Module
+					{
+						icon = "design-command"
+					}
+					page tech_all_inquiry
+					{
+						icon = "travel-world"
+					}
+				}
+				section ZC_App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Connection"
+						icon = "tech-2-connection"
+					}
+				}
+				section ZC_Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+					show = section,component
+				}
+			}
+		}
+		customize
+		{
+			new theme = 4
+			font = "lato"
+			color options
+			{
+				color = blue
+			}
+			logo
+			{
+				preference = "none"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		forms
+		{
+			form Dealer
+			{
+				label placement = auto
+			}
+			form DTC_Details
+			{
+				label placement = auto
+			}
+			form inquiry_module
+			{
+				label placement = auto
+			}
+			form Part_Data
+			{
+				label placement = auto
+			}
+			form technician_module
+			{
+				label placement = auto
+			}
+			form trouble_code
+			{
+				label placement = auto
+			}
+			form Vehicle
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = rose
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		forms
+		{
+			form Dealer
+			{
+				label placement = auto
+			}
+			form DTC_Details
+			{
+				label placement = auto
+			}
+			form inquiry_module
+			{
+				label placement = auto
+			}
+			form Part_Data
+			{
+				label placement = auto
+			}
+			form technician_module
+			{
+				label placement = auto
+			}
+			form trouble_code
+			{
+				label placement = auto
+			}
+			form Vehicle
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = rose
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
