@@ -1,0 +1,101 @@
+vehicle_details1 = Vehicle[VIN != null];
+vid = input.VIN_i;
+for each  v1 in vehicle_details1
+{
+	if(vid == v1)
+	{
+		input.Milage_i = v1.Mileage;
+		input.Reg_Date_i = v1.Reg_Date;
+		input.RO_Date_i = v1.RO_Date;
+		input.RO_No_i = v1.RO_No;
+		input.Engine_No_i = v1.Engine_No;
+		input.Model_code_i = v1.Model_Code;
+		input.Fuel_Type_i = v1.Fuel_Type;
+		input.Model_Description_i = v1.Model_Description;
+		// 	input.VIN_i = v1.VIN ;
+		input.Accessories_i = v1.Accessories;
+		input.Vechicle_immoblished_i = v1.Vehicle_Immobilized;
+	}
+}
+
+
+
+
+=>Subform Data Fetch :
+data = DTC_Details[ID != 0];
+for each  dtc_data in data
+{
+	if(row.DTC_Codes_i = dtc_data)
+	{
+		row.DTC_Description_i=dtc_data.DTC_Description;
+		row.Status_i=dtc_data.Active_Status;
+		row.System_DTC_Logged_in_i=dtc_data.System_DTC_Logged_in;
+	}
+}
+
+
+
+=> total and Grand Total:
+
+row.Total_i=row.Part_Quantity_i * row.Price_i;
+temp_total = 0.0;
+for each  var1 in input.Part_Details_i
+{
+	temp_total = temp_total + var1.Total_i;
+}
+input.Grand_Total_i = temp_total;
+
+
+=>fetch Part Data:
+data = Part_Data[ID == row.Part_No_i];
+for each  ptdata in data
+{
+	row.Description_i=ptdata.Description;
+	row.Price_i=ptdata.Price;
+}
+
+
+=>Tabular Form:
+
+if(input.Case_No_i != null)
+{
+	// Fetch related data from Cases form
+	matching_cases = inquiry_module[Case_No_i == input.Case_No_i];
+	// Start building HTML for the table
+	html_content = "<table border='1' style='width:100%; text-align:center;'>";
+	html_content = html_content + "<tr><th>Case No</th><th>Subject</th><th>VIN</th><th>Request Type</th><th>Model Description</th><th>Model Code</th><th>Status</th></tr>";
+	for each  case_record in matching_cases
+	{
+		html_content = html_content + "<tr>";
+		html_content = html_content + "<td>" + case_record.Case_No_i + "</td>";
+		html_content = html_content + "<td>" + case_record.Subject_field_i + "</td>";
+		html_content = html_content + "<td>" + case_record.VIN_i + "</td>";
+		html_content = html_content + "<td>" + case_record.Request_Type_i + "</td>";
+		html_content = html_content + "<td>" + case_record.Model_Description_i + "</td>";
+		html_content = html_content + "<td>" + case_record.Model_code_i + "</td>";
+		html_content = html_content + "<td>" + case_record.Status_i + "</td>";
+		html_content = html_content + "</tr>";
+	}
+	html_content = html_content + "</table>";
+	// Assign the HTML to the snippet field
+	Generated_Table = html_content;
+}
+else
+{
+	Generated_Table = "No data available for the entered Case No.";
+}
+// if(input.Case_No_i != null)
+// {
+// 	matching_cases = inquiry_module[Case_No_i == input.Case_No_i];
+// 	table_content = "Case No\tSubject\tVIN\tRequest Type\tModel Description\tModel Code\tStatus\n";
+// 	for each  case_record in matching_cases
+// 	{
+// 		table_content = table_content + case_record.Case_No_i + "\t" + case_record.Subject_field_i + "\t" + case_record.VIN_i + "\t" + case_record.Request_Type_i + "\t" + case_record.Model_Description_i + "\t" + case_record.Model_code_i + "\t" + case_record.Status_i + "\n";
+// 	}
+// 	input.Generated_Table = table_content;
+// 	// Assign the generated plain-text table
+// }
+// else
+// {
+// 	input.Generated_Table = "No data available for the entered Case No.";
+// }
