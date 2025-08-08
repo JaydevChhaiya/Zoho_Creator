@@ -1,0 +1,22 @@
+<%{
+	%>
+<style>
+.view-header>.row h3 .zc-view-name {
+    color: white;
+	font-weight: 600
+}
+.view-header .zc-new-report-header.row>.row{
+	background-color:#2eb79f
+}
+.zc-reporttype-list .list-view-inner .handsontable .wtHolder .wtHider .htCore thead th {
+    background-color: #D3D3D3;
+}
+.zc-add-record.zc-tooltip-el {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 4px !important;
+}
+</style>
+<%
+ 
+}%>
